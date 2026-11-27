@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10120f">
+    <meta name="description" content="Find motion in saved videos or check in on a live camera. Motion Organizer works right in your browser and keeps your recordings on your device.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'">
+    <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Motion Organizer — See what moves. Keep what matters.</title>
+  </head>
+  <body>
+    <div class="announcement">
+      <span class="announcement-mark" aria-hidden="true"></span>
+      Your videos stay on your device. <a href="#privacy">Here's how.</a>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Motion Organizer home">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none">
+            <rect x="1" y="1" width="34" height="34" rx="12" fill="#defa73"/>
+            <path d="M7.5 18.5h5l3-8 5 16 3-8h5" stroke="#181b13" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-wordmark">motion<span>organizer</span></span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#privacy">Your privacy</a>
+        <a href="#platforms">Where it works</a>
+        <a class="nav-cta" href="./app/">Open the app <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="availability"><span></span> MOTION DETECTION, A LITTLE MORE HUMAN</div>
+            <h1>See what moves.<br><span>Keep what matters.</span></h1>
+            <p class="hero-description">
+              Make sense of your videos and your camera, without handing your recordings to the cloud.
+              A quieter kind of peace of mind.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="./app/">
+                Open Motion Organizer
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5"/></svg>
+              </a>
+              <a class="button button-quiet" href="#how-it-works">How it works <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-reassurance">
+              <span class="reassurance-check" aria-hidden="true">
+                <svg viewBox="0 0 18 18" fill="none"><path d="m4.5 9.2 3 3 6-6.5"/></svg>
+              </span>
+              <span>Runs in your browser. <strong>No account, no uploads.</strong></span>
+            </div>
+          </div>
+
+          <div class="hero-art" aria-label="Preview of the Motion Organizer dashboard">
+            <div class="art-glow" aria-hidden="true"></div>
+            <div class="motion-window">
+              <div class="window-toolbar">
+                <div class="mini-brand"><span class="mini-brand-symbol">∿</span> motionorganizer</div>
+                <span class="window-private"><span></span> ON DEVICE</span>
+              </div>
+              <div class="window-body">
+                <div class="window-overline">YOUR MOTION, MADE SENSE OF</div>
+                <div class="window-title">A little more aware.<br><span>A lot more at ease.</span></div>
+                <div class="video-scene">
+                  <div class="scene-sun"></div>
+                  <div class="scene-house">
+                    <span class="house-roof"></span>
+                    <span class="house-wall"></span>
+                    <span class="house-door"></span>
+                    <span class="house-window house-window-one"></span>
+                    <span class="house-window house-window-two"></span>
+                  </div>
+                  <span class="scene-fence fence-one"></span>
+                  <span class="scene-fence fence-two"></span>
+                  <span class="scene-shrub shrub-one"></span>
+                  <span class="scene-shrub shrub-two"></span>
+                  <span class="scene-ground"></span>
+                  <span class="scene-motion-box"><span>AREA OF MOVEMENT</span></span>
+                  <span class="scene-recording"><span></span> VIDEO PREVIEW</span>
+                  <span class="scene-time">8:42:15 PM</span>
+                </div>
+                <div class="window-result">
+                  <span class="result-symbol" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M5 10 3.5 6.5c-.7-1.6 1.2-2.7 2.5-1.4L9 8m10 2 1.5-3.5c.7-1.6-1.2-2.7-2.5-1.4L15 8m-3 1c-4.1 0-7 2.8-7 6.5 0 2.8 2.1 4.5 7 4.5s7-1.7 7-4.5C19 11.8 16.1 9 12 9Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="result-detail"><strong>Something moved.</strong><span>Motion detected · Just now</span></span>
+                  <span class="result-category">OTHER MOTION</span>
+                </div>
+              </div>
+              <div class="window-bottom"><span>YOUR ACTIVITY</span><span><i></i> Saved on this device</span></div>
+            </div>
+            <div class="floating-note"><span class="floating-check" aria-hidden="true">✓</span><span><strong>Nothing uploaded.</strong><small>Just the way it should be.</small></span></div>
+            <span class="art-spark spark-one" aria-hidden="true">✳</span>
+            <span class="art-spark spark-two" aria-hidden="true">·</span>
+          </div>
+        </div>
+        <div class="hero-bottom">
+          <span class="hero-caption">A SMALL TOOL FOR THE MOMENTS YOU DON'T WANT TO MISS.</span>
+          <a class="scroll-link" href="#how-it-works">SCROLL A LITTLE <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Product promises">
+        <div><span class="strip-icon strip-icon-lime">◎</span><span><strong>Local-first, always</strong><small>Your files stay yours.</small></span></div>
+        <span class="strip-divider" aria-hidden="true"></span>
+        <div><span class="strip-icon strip-icon-lilac">↗</span><span><strong>Ready when you are</strong><small>Start right in your browser.</small></span></div>
+        <span class="strip-divider" aria-hidden="true"></span>
+        <div><span class="strip-icon strip-icon-peach">⌁</span><span><strong>Easy to make sense of</strong><small>Movement, neatly organized.</small></span></div>
+        <a class="strip-link" href="./app/">Come on in <span aria-hidden="true">→</span></a>
+      </section>
+
+      <section class="how-section section-wrap" id="how-it-works">
+        <div class="section-heading">
+          <span class="section-label"><span></span> A LITTLE MORE AWARE</span>
+          <div class="section-heading-line">
+            <h2>Less searching.<br>More knowing.</h2>
+            <p>Your recordings have the story. Motion Organizer helps you find the parts worth a second look.</p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card feature-card-wide feature-card-soft">
+            <span class="feature-number">01 — VIDEO</span>
+            <span class="feature-icon feature-icon-lilac" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="13.5" height="14" rx="2.5"/><path d="m17 10 4-2v8l-4-2"/><path d="m9 9 4.2 3-4.2 3V9Z" fill="currentColor" stroke="none"/></svg></span>
+            <h3>A shorter route to the moment.</h3>
+            <p>Pick a saved video and let it scan for movement. Keep watching while each second is checked.</p>
+            <div class="feature-visual-scan" aria-hidden="true"><span class="scan-line"></span><span class="scan-pulse"></span><span class="scan-window"><i></i><i></i><i></i><i></i></span><span class="scan-time">SCANNING, RIGHT HERE</span></div>
+          </article>
+          <article class="feature-card feature-card-soft">
+            <span class="feature-number">02 — CAMERA</span>
+            <span class="feature-icon feature-icon-peach" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="7" width="13" height="12" rx="2.5"/><path d="m16.5 11 4-2v8l-4-2"/><circle cx="10" cy="13" r="2.4"/></svg></span>
+            <h3>A live check-in, on your terms.</h3>
+            <p>When you're ready, grant camera permission. Stop monitoring whenever you like.</p>
+            <div class="camera-visual" aria-hidden="true"><span class="camera-lens"><i></i></span><span class="camera-signal signal-a"></span><span class="camera-signal signal-b"></span><span class="camera-record"><i></i> READY WHEN YOU ARE</span></div>
+          </article>
+          <article class="feature-card feature-card-soft">
+            <span class="feature-number">03 — ACTIVITY</span>
+            <span class="feature-icon feature-icon-green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13h4l2.2-7 4.1 12 2.4-7H20" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg></span>
+            <h3>One calm place to look.</h3>
+            <p>Find recent activity, filter it by category, and keep the events that matter close.</p>
+            <div class="list-visual" aria-hidden="true"><span><i class="list-icon icon-violet">•</i><i class="list-line"></i><i class="list-tag tag-violet">PEOPLE</i></span><span><i class="list-icon icon-green">•</i><i class="list-line"></i><i class="list-tag tag-green">PETS</i></span><span><i class="list-icon icon-peach">•</i><i class="list-line"></i><i class="list-tag tag-peach">MOTION</i></span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="privacy-section" id="privacy">
+        <div class="privacy-inner">
+          <div class="privacy-copy">
+            <span class="section-label privacy-label"><span></span> QUIETLY PRIVATE</span>
+            <h2>Your recordings<br>belong <em>to you.</em></h2>
+            <p>Your browser reads the video locally, on your device. Your recordings aren't uploaded or copied by the app. Activity history stays in the browser you used.</p>
+            <div class="privacy-list">
+              <div><span>01</span> Your recordings stay on your device.</div>
+              <div><span>02</span> Your camera only starts with your permission.</div>
+              <div><span>03</span> Your activity stays in your own browser.</div>
+            </div>
+            <small class="privacy-caveat">Like any website, its host may receive ordinary requests to load the page. Video analysis happens locally.</small>
+          </div>
+          <div class="privacy-art" aria-hidden="true">
+            <span class="privacy-orbit privacy-orbit-outer"></span>
+            <span class="privacy-orbit privacy-orbit-inner"></span>
+            <span class="privacy-sparkle sparkle-a">✳</span>
+            <span class="privacy-sparkle sparkle-b">✳</span>
+            <span class="privacy-shield">
+              <svg viewBox="0 0 120 132" fill="none"><path d="m60 9 42 17v34c0 29-19 49-42 63C37 109 18 89 18 60V26L60 9Z" fill="currentColor" fill-opacity=".08" stroke="currentColor" stroke-width="2.4"/><path d="M60 26 88 37v23c0 21-12 36-28 46-16-10-28-25-28-46V37l28-11Z" fill="currentColor" fill-opacity=".1"/><path d="m45 63 10 10 21-24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/></svg>
+            </span>
+            <span class="privacy-bubble bubble-top"><span></span> YOUR FILES, YOURS</span>
+            <span class="privacy-bubble bubble-bottom">LOCAL BY DESIGN <span>✓</span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="platform-section section-wrap" id="platforms">
+        <div class="platform-intro">
+          <span class="section-label"><span></span> HOWEVER YOU LIKE TO WORK</span>
+          <h2>At home on your screen.</h2>
+          <p>Open it in a browser. Install it if you like. Your workflow, your call.</p>
+        </div>
+        <div class="platform-grid">
+          <article class="platform-card">
+            <span class="platform-symbol platform-browser-symbol" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="4.5" width="22" height="19" rx="3"/><path d="M3 9.5h22"/><circle cx="6.8" cy="7" r=".7" fill="currentColor"/><circle cx="10" cy="7" r=".7" fill="currentColor"/><circle cx="13.2" cy="7" r=".7" fill="currentColor"/><path d="M9 17h3l2-4 3.5 8 2-4H22"/></svg></span>
+            <span class="platform-copy"><strong>Web browser</strong><small>Open the app on Chrome, Edge, or another modern browser.</small></span>
+            <a class="platform-link" href="./app/">Open the app <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="platform-card">
+            <span class="platform-symbol platform-desktop-symbol" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="4" width="22" height="15" rx="2.5"/><path d="M10 24h8m-4-5v5M3 9h22m-14-2.5v5"/></svg></span>
+            <span class="platform-copy"><strong>Windows desktop</strong><small>A dedicated desktop version is available alongside the browser app.</small></span>
+            <span class="platform-note">DESKTOP APP</span>
+          </article>
+          <article class="platform-card">
+            <span class="platform-symbol platform-mobile-symbol" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none"><rect x="7" y="2.5" width="14" height="23" rx="3"/><path d="M11 5.5h6M12.5 22h3"/></svg></span>
+            <span class="platform-copy"><strong>Android</strong><small>A native app brings video analysis and camera monitoring to Android.</small></span>
+            <span class="platform-note">ANDROID APP</span>
+          </article>
+        </div>
+        <div class="platform-footnote"><span class="footnote-spark">✳</span> The browser and installable web app work without downloading an installer.</div>
+      </section>
+
+      <section class="closing-section">
+        <span class="closing-spark closing-spark-one" aria-hidden="true">✳</span>
+        <span class="closing-spark closing-spark-two" aria-hidden="true">✳</span>
+        <div class="closing-inner">
+          <span class="closing-overline"><span></span> A LITTLE LESS WONDERING</span>
+          <h2>The next time you need to know,<br><em>you'll know where to look.</em></h2>
+          <p>Bring your own video. Let the app do the watching.</p>
+          <a class="button button-dark" href="./app/">Take a look around <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="#">
+        <span class="footer-mark" aria-hidden="true">∿</span>
+        <span>motion<strong>organizer</strong></span>
+      </a>
+      <span class="footer-note">Made for the little moments that matter.</span>
+      <a class="footer-top" href="#">BACK TO TOP <span aria-hidden="true">↑</span></a>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>

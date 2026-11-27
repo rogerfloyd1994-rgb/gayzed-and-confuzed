@@ -1,0 +1,10 @@
+{
+  "name": "motion-organizer-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.cjs",
+    "start": "npm run build && node server.cjs --open",
+    "test": "node --test server.test.cjs"
+  }
+}

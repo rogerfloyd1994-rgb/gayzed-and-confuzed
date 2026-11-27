@@ -1,0 +1,49 @@
+# Dependencies and generated build output
+**/node_modules/
+/windows-app/web/
+/windows-app/release/
+/website/dist/
+/android/.gradle/
+/android/.kotlin/
+/android/local.properties
+/android/.idea/
+/android/**/build/
+/android/**/*.apk
+/android/**/*.aab
+__pycache__/
+*.py[cod]
+
+# Local settings, signing material, and private recordings/backups
+/.json
+*.gpg
+*.p10
+*.p12
+*.pfx
+*.pem
+*.p8
+*.key
+*.keystore
+*.jks
+*.mobileprovision
+*.cer
+key.properties
+keystore.properties
+.env
+.env.*
+!.env.example
+motion_videos/
+motion_clips/
+logs/
+/Horizon Located
+
+# Local release artifacts
+*.exe
+*.dmg
+*.blockmap
+sha256sum.txt
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7fb">
+    <meta name="description" content="Find movement in saved videos or monitor a live camera. Your recordings stay on your device.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; style-src 'self'; script-src 'self'; font-src 'self';">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Motion Organizer</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="Motion Organizer home">
+          <span class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <rect x="3" y="3" width="26" height="26" rx="9" fill="currentColor" opacity=".14"/>
+              <path d="M7.5 17h4l2.4-6.5 4.3 12 2.4-7h4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">motion<span>organizer</span></span>
+        </a>
+
+        <div class="sidebar-caption">WORKSPACE</div>
+        <nav class="side-navigation" aria-label="Main navigation">
+          <a class="nav-link active" href="#overview" aria-current="page">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="5.5" height="5.5" rx="1.5"/><rect x="11.5" y="3" width="5.5" height="5.5" rx="1.5"/><rect x="3" y="11.5" width="5.5" height="5.5" rx="1.5"/><rect x="11.5" y="11.5" width="5.5" height="5.5" rx="1.5"/></svg>
+            Overview
+          </a>
+          <a class="nav-link" href="#results">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 4h10M5 8h10M5 12h6M5 16h6"/><path d="M3.5 3.5h13v13h-13z"/></svg>
+            Activity
+            <span class="nav-count" id="nav-count">0</span>
+          </a>
+          <button class="nav-link nav-button" id="pick-video-nav">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 13.5v-9m0 0L6.5 8M10 4.5 13.5 8"/><path d="M4.5 11.5v4a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-4"/></svg>
+            Import a video
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="privacy-card">
+            <span class="privacy-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 2.5 16 5v4.7c0 3.6-2.5 6.4-6 7.8-3.5-1.4-6-4.2-6-7.8V5l6-2.5Z"/><path d="m7.5 9.8 1.7 1.7 3.3-3.6"/></svg>
+            </span>
+            <strong>Private by design</strong>
+            <span>Analysis runs on your device. Your videos aren't uploaded.</span>
+          </div>
+          <span class="sidebar-version">MOTION ORGANIZER <span id="platform-label">WEB EDITION</span></span>
+        </div>
+      </aside>
+
+      <main class="main-content" id="overview">
+        <header class="topbar">
+          <div class="breadcrumbs">Workspace <span>/</span> <strong>Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="local-status"><span class="online-dot"></span><span id="connection-status">Offline-ready · on this device</span></span>
+            <button id="install-button" class="button button-quiet install-button" hidden>Install app</button>
+            <label class="category-picker">
+              <span>Sort detected motion</span>
+              <select id="category-choice" aria-label="Choose a motion category">
+                <option value="auto">Auto — other motion</option>
+                <option value="People">People</option>
+                <option value="Pets">Pets</option>
+                <option value="Other motion">Other motion</option>
+              </select>
+            </label>
+          </div>
+        </header>
+
+        <section class="page-body">
+          <div class="welcome-row">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-mark"></span> YOUR PERSONAL MOTION DASHBOARD</div>
+              <h1>Nothing gets<br class="mobile-break"> past the quiet.</h1>
+              <p class="welcome-copy">Bring a video or check in on your camera. We'll take it from here.</p>
+            </div>
+            <div class="welcome-decoration" aria-hidden="true">
+              <span class="decor-orbit orbit-one"></span><span class="decor-orbit orbit-two"></span>
+              <svg viewBox="0 0 148 148" fill="none"><path d="M74 24v11M74 113v11M24 74h11M113 74h11M38.6 38.6l7.8 7.8m55.2 55.2 7.8 7.8m0-70.8-7.8 7.8m-55.2 55.2-7.8 7.8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="74" cy="74" r="25" stroke="currentColor" stroke-width="2.5"/><circle cx="74" cy="74" r="8" fill="currentColor"/><circle cx="105" cy="52" r="5" fill="#ec7d54"/></svg>
+            </div>
+          </div>
+
+          <section class="stats-grid" aria-label="Activity summary">
+            <article class="stat-card stat-card-total">
+              <span class="stat-icon stat-icon-purple"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 13h4l2.2-7 4.1 12 2.4-7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="stat-copy"><span>Motion events</span><strong id="stat-total">0</strong><small>on this device</small></span>
+              <span class="stat-mark" aria-hidden="true">⌁</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon stat-icon-orange"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-4 3c-3.8 0-6 2.1-6 4.5 0 1 1 1.5 2 1.5h8c1 0 2-.5 2-1.5 0-2.4-2.2-4.5-6-4.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="stat-copy"><span>People</span><strong id="stat-people">0</strong><small>categorized events</small></span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon stat-icon-green"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 10 3.5 6.5c-.7-1.6 1.2-2.7 2.5-1.4L9 8m10 2 1.5-3.5c.7-1.6-1.2-2.7-2.5-1.4L15 8m-3 1c-4.1 0-7 2.8-7 6.5 0 2.8 2.1 4.5 7 4.5s7-1.7 7-4.5C19 11.8 16.1 9 12 9Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="14" r=".8" fill="currentColor"/><circle cx="14.5" cy="14" r=".8" fill="currentColor"/></svg></span>
+              <span class="stat-copy"><span>Pets</span><strong id="stat-pets">0</strong><small>categorized events</small></span>
+            </article>
+          </section>
+
+          <section class="workspace-grid">
+            <article class="panel source-panel" aria-labelledby="source-title">
+              <div class="panel-header">
+                <div>
+                  <div class="panel-kicker">GET STARTED</div>
+                  <h2 id="source-title">Choose your source</h2>
+                </div>
+                <span class="step-badge">01</span>
+              </div>
+
+              <button class="source-option" id="pick-video">
+                <span class="source-option-icon source-video-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="13.5" height="14" rx="2.5"/><path d="m17 10 4-2v8l-4-2"/><path d="m9 9 4.2 3-4.2 3V9Z" fill="currentColor" stroke="none"/></svg></span>
+                <span class="source-option-text"><strong>Add videos or screenshots</strong><small>Select 10 or more local files; videos are analyzed one at a time</small></span>
+                <svg class="source-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5"/></svg>
+              </button>
+              <button class="source-option" id="start-camera">
+                <span class="source-option-icon source-camera-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="7" width="13" height="12" rx="2.5"/><path d="m16.5 11 4-2v8l-4-2"/><circle cx="10" cy="13" r="2.4"/></svg></span>
+                <span class="source-option-text"><strong>Monitor a live camera</strong><small>Watch for movement in real time</small></span>
+                <svg class="source-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5"/></svg>
+              </button>
+
+              <div id="video-stage" class="media-stage">
+                <div id="stage-empty" class="stage-empty">
+                  <span class="stage-empty-mark"><svg viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="5" y="5" width="34" height="34" rx="11"/><path d="M19 15.5 29 22l-10 6.5v-13Z" fill="currentColor" stroke="none"/></svg></span>
+                  <span><strong>Your next discovery starts here.</strong><small>Choose a saved video or start the camera.</small></span>
+                </div>
+                <video id="preview" playsinline muted controls hidden></video>
+                <div id="region-layer" class="region-layer" hidden aria-label="Motion detection regions"></div>
+                <div id="live-badge" class="live-badge" hidden><span></span> LIVE MONITORING</div>
+              </div>
+              <section class="monitor-settings" aria-label="Monitoring settings">
+                <div class="setting-heading">
+                  <div>
+                    <strong>Detection regions</strong>
+                    <small>Drag a box to move it; use its corner to resize.</small>
+                  </div>
+                  <button id="add-region" class="text-button" type="button">Add region</button>
+                </div>
+                <div id="region-list" class="region-list"></div>
+                <label class="recording-picker">
+                  <span>Live camera recording</span>
+                  <select id="recording-mode" aria-label="Live camera recording mode">
+                    <option value="events">Motion event clips</option>
+                    <option value="continuous">Continuous (10-minute local segments)</option>
+                    <option value="off">Detection only, no video recording</option>
+                  </select>
+                  <small>Event clips start when motion is noticed and include about 5 seconds after it; pre-event video is not included yet.</small>
+                </label>
+                <label class="notification-setting">
+                  <input id="notifications-enabled" type="checkbox">
+                  <span>Show on-device motion notifications while monitoring</span>
+                </label>
+                <div class="setting-heading report-settings">
+                  <div>
+                    <strong>Quiet-period report</strong>
+                    <small>Record when no motion is observed in active regions.</small>
+                  </div>
+                  <select id="quiet-period" aria-label="Quiet period report interval">
+                    <option value="60">After 1 minute</option>
+                    <option value="300" selected>After 5 minutes</option>
+                    <option value="900">After 15 minutes</option>
+                  </select>
+                </div>
+                <div class="custom-category-setting">
+                  <label for="custom-category">Your activity labels</label>
+                  <div class="category-entry">
+                    <input id="custom-category" maxlength="32" placeholder="Add a label">
+                    <button id="save-category" class="button button-quiet" type="button">Add label</button>
+                  </div>
+                  <div id="custom-category-list" class="custom-category-list"></div>
+                  <small>Labels help organize motion events; they do not train an object detector.</small>
+                </div>
+              </section>
+              <div class="stage-footer">
+                <span id="media-status">Ready when you are</span>
+                <button id="stop-camera" class="button button-stop" hidden>Stop camera</button>
+              </div>
+
+              <div id="analysis-box" class="analysis-box" hidden>
+                <div class="analysis-caption">
+                  <span id="analysis-message">Analyzing video…</span>
+                  <button id="cancel-analysis" class="text-button">Cancel</button>
+                </div>
+                <progress id="analysis-progress" max="100" value="0">0%</progress>
+                <div class="analysis-footnote"><span id="analysis-percent">0%</span><span>Sampled on this device</span></div>
+              </div>
+              <p class="source-note"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m8 1.8 5 2v3.9c0 3-2.1 5.3-5 6.5-2.9-1.2-5-3.5-5-6.5V3.8l5-2Z"/><path d="m6 7.5 1.4 1.4 2.8-3"/></svg> Videos and clips stay on this device. Report backups are exported only when you choose.</p>
+            </article>
+
+            <section id="results" class="panel activity-panel" aria-labelledby="activity-title">
+              <div class="panel-header activity-heading">
+                <div>
+                  <div class="panel-kicker">YOUR FEED</div>
+                  <h2 id="activity-title">Recent activity</h2>
+                </div>
+                <button id="clear-history" class="text-button clear-button" hidden>Clear all</button>
+              </div>
+              <div class="backup-controls">
+                <div>
+                  <strong>Online or offline</strong>
+                  <small>Export report details to a cloud drive you choose; clips stay local. Keep backup files private.</small>
+                </div>
+                <div class="backup-actions">
+                  <button id="export-backup" class="button button-quiet" type="button">Export reports</button>
+                  <button id="import-backup" class="button button-quiet" type="button">Import reports</button>
+                </div>
+                <input id="backup-input" type="file" accept="application/json,.json" hidden>
+              </div>
+              <div id="category-filters" class="filter-tabs" role="group" aria-label="Filter results">
+                <button class="filter-tab active" data-filter="All">All <span id="filter-all-count">0</span></button>
+                <button class="filter-tab" data-filter="People">People</button>
+                <button class="filter-tab" data-filter="Pets">Pets</button>
+                <button class="filter-tab" data-filter="Other motion">Motion</button>
+                <button class="filter-tab" data-filter="No motion">Quiet</button>
+                <button class="filter-tab" data-filter="Image reference">Images</button>
+              </div>
+              <div id="activity-list" class="activity-list" aria-live="polite">
+                <div class="empty-state">
+                  <span class="empty-illustration"><svg viewBox="0 0 58 58" fill="none" aria-hidden="true"><circle cx="29" cy="29" r="25" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M15 30h7l4-9 7 17 4-8h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <strong>It's nice and quiet.</strong>
+                  <span>Your motion events will show up here.</span>
+                </div>
+              </div>
+              <div class="activity-footnote" id="activity-footnote">Reports describe observed motion and quiet periods; they do not determine intent or identify people. Report backups include titles, labels, timestamps, and summaries.</div>
+            </section>
+          </section>
+
+          <footer class="page-footer">
+            <span>Designed for your peace of mind.</span>
+            <span class="footer-local"><span class="online-dot"></span> No automatic uploads. Your videos stay on this device.</span>
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <input id="video-input" type="file" accept="video/*,image/*,.mp4,.mov,.webm,.mkv,.avi" multiple hidden>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

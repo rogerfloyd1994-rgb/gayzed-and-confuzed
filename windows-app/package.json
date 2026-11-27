@@ -1,0 +1,60 @@
+{
+  "name": "motion-organizer",
+  "version": "1.0.0",
+  "description": "Private, on-device motion analysis for desktop.",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "prepare:app": "node scripts/prepare-app.cjs",
+    "start": "npm run prepare:app && electron .",
+    "build:win": "npm run prepare:app && electron-builder --win nsis --x64",
+    "build:mac": "npm run prepare:app && electron-builder --mac dmg --universal"
+  },
+  "devDependencies": {
+    "electron": "45.2.1",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.motionorganizer.desktop",
+    "productName": "Motion Organizer",
+    "artifactName": "${productName}-Setup-${version}.${ext}",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "web/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg",
+      "artifactName": "${productName}-macOS-${version}-${arch}.${ext}"
+    },
+    "dmg": {
+      "title": "${productName} ${version}",
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
+}
